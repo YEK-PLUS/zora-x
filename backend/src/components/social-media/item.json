@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_social_media_items",
+  "info": {
+    "displayName": "item",
+    "icon": "address-book"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Facebook",
+        "Instagram",
+        "Twitter",
+        "Github"
+      ],
+      "required": true
+    },
+    "username": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
