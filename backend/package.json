@@ -12,7 +12,7 @@
   "name": "backend",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "ZORO-X CMS Backend",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
@@ -21,7 +21,7 @@
   },
   "devDependencies": {},
   "author": {
-    "name": "A Strapi developer"
+    "name": "YEK-PLUS"
   },
   "strapi": {
     "uuid": "0456eb3b-58e5-4a9a-aa3c-460edcafd6f1",
