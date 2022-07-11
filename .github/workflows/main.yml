@@ -11,15 +11,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
       - name: Deploy
-        uses: YEK-PLUS/caprover-action@v1.1
+        uses: AlexxNB/caprover-action@v1
         with:
           server: ${{secrets.CAPROVER_SERVER}}
           password: ${{secrets.CAPROVER_PASSWORD}}
           appname: ${{secrets.CAPROVER_APPNAMEDEV}}
           branch: main
-          directory: ./backend
