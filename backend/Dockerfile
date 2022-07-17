@@ -1,11 +1,15 @@
-FROM node:12-alpine
-
-WORKDIR /usr/app
-COPY package*.json ./
+FROM node:16.15-alpine3.14
+RUN mkdir -p /opt/app
+WORKDIR /opt/app
+RUN adduser -S app
+COPY app/ .
 RUN npm install
+RUN npm install --save @strapi/strapi
+RUN chown -R app /opt/app
+USER app
 RUN npm run build
-COPY . .
 EXPOSE 1337
+
 
 # DATABASE_HOST
 ARG DATABASE_HOST=${DATABASE_HOST}
@@ -75,4 +79,4 @@ ENV AWS_BUCKET_ACL=${AWS_BUCKET_ACL}
 ARG CDN_BASE_URL=${CDN_BASE_URL}
 ENV CDN_BASE_URL=${CDN_BASE_URL}
 
-CMD ["npm", "start"]
+CMD [ "npm", "run", "start" ]
