@@ -1,5 +1,5 @@
 FROM node:12-alpine
-RUN npm install && npm cache clean --force
+RUN npm install
 RUN mkdir -p /usr/src/app
 COPY ./ /usr/src/app
 
