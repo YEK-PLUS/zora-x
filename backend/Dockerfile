@@ -1,7 +1,7 @@
 FROM node:12-alpine
+RUN npm install && npm cache clean --force
 RUN mkdir -p /usr/src/app
 COPY ./ /usr/src/app
-RUN npm install && npm cache clean --force
 
 # DATABASE_HOST
 ARG DATABASE_HOST=${DATABASE_HOST}
