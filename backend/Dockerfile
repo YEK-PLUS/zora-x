@@ -8,6 +8,7 @@ RUN npm install --save @strapi/strapi
 RUN chown -R app /opt/app
 USER app
 RUN npm run
+RUN npm run build
 EXPOSE 1337
 
 
