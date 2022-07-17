@@ -1,7 +1,5 @@
 FROM node:12-alpine
 RUN npm install
-RUN mkdir -p /usr/src/app
-COPY ./ /usr/src/app
 
 # DATABASE_HOST
 ARG DATABASE_HOST=${DATABASE_HOST}
