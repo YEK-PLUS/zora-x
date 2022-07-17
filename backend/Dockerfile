@@ -3,6 +3,7 @@ FROM node:12-alpine
 WORKDIR /usr/app
 COPY package.json ./
 RUN npm install
+RUN npm run build
 COPY . ./
 EXPOSE 1337
 
@@ -74,5 +75,4 @@ ENV AWS_BUCKET_ACL=${AWS_BUCKET_ACL}
 ARG CDN_BASE_URL=${CDN_BASE_URL}
 ENV CDN_BASE_URL=${CDN_BASE_URL}
 
-RUN npm run build
-RUN npm start
+CMD ["npm", "start"]
