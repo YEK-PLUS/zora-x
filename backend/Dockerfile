@@ -1,14 +1,16 @@
 FROM node:16.15-alpine3.14
 RUN mkdir -p /opt/app
 WORKDIR /opt/app
-RUN adduser -S app
 COPY ./backend .
 RUN npm install
-RUN chown -R app /opt/app
-USER app
 RUN npm run build
-EXPOSE 8080
+USER root
 
+# PORT
+ARG PORT=${PORT}
+ENV PORT=${PORT}
+
+EXPOSE ${PORT}
 
 # DATABASE_HOST
 ARG DATABASE_HOST=${DATABASE_HOST}
