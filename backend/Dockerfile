@@ -1,5 +1,10 @@
 FROM node:12-alpine
+
+WORKDIR /usr/app
+COPY package.json ./
 RUN npm install
+COPY . ./
+EXPOSE 1337
 
 # DATABASE_HOST
 ARG DATABASE_HOST=${DATABASE_HOST}
