@@ -3,7 +3,6 @@ RUN mkdir -p /opt/app
 WORKDIR /opt/app
 COPY ./backend .
 RUN npm install
-RUN npm run build
 
 # PORT
 ARG PORT=${PORT}
@@ -79,4 +78,5 @@ ENV AWS_BUCKET_ACL=${AWS_BUCKET_ACL}
 ARG CDN_BASE_URL=${CDN_BASE_URL}
 ENV CDN_BASE_URL=${CDN_BASE_URL}
 
+RUN npm run build
 CMD [ "npm", "run", "start" ]
