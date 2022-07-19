@@ -12,7 +12,7 @@
   "name": "backend",
   "private": true,
   "version": "0.1.0",
-  "description": "ZORO-X CMS Backend",
+  "description": "ZORA-X CMS Backend",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
